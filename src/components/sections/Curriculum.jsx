@@ -1,3 +1,4 @@
+// src/components/sections/Curriculum.jsx
 import React, { useState } from 'react';
 import AnimatedSection from '../ui/AnimatedSection';
 import CurriculumTab, { CurriculumContent } from '../ui/CurriculumTab';
@@ -15,7 +16,7 @@ const Curriculum = () => {
       <div className="container mx-auto px-6">
         <div className="mb-16 text-center">
           <AnimatedSection animation="fade-up">
-            <h2 className="section-title">Lộ trình học 6 tháng</h2>
+            <h2 className="section-title">Lộ trình học 15 tuần</h2>
             <p className="section-subtitle">
               Chương trình học được thiết kế theo trình tự từ cơ bản đến nâng cao, giúp bạn tiến bộ từng bước một cách vững chắc
             </p>
@@ -23,8 +24,9 @@ const Curriculum = () => {
         </div>
         
         <AnimatedSection animation="fade-up" delay={200}>
-          <div className="flex flex-col md:flex-row">
-            <div className="w-full md:w-1/3 mb-8 md:mb-0 md:pr-8">
+          <div className="flex flex-col lg:flex-row">
+            {/* Tabs */}
+            <div className="w-full lg:w-1/3 mb-8 lg:mb-0 lg:pr-8 max-h-[600px] overflow-y-auto pr-4">
               {CURRICULUM.map((item) => (
                 <CurriculumTab
                   key={item.id}
@@ -35,7 +37,8 @@ const Curriculum = () => {
               ))}
             </div>
             
-            <div className="w-full md:w-2/3">
+            {/* Content */}
+            <div className="w-full lg:w-2/3">
               {CURRICULUM.map((item) => (
                 <CurriculumContent
                   key={item.id}

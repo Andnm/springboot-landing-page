@@ -14,6 +14,7 @@ export const NAV_LINKS = [
   { name: "Trang chủ", href: "hero" },
   { name: "Lợi ích", href: "features" },
   { name: "Lộ trình", href: "curriculum" },
+  { name: "Giảng viên", href: "#instructor" },
   { name: "Đánh giá", href: "testimonials" },
   { name: "Học phí", href: "pricing" },
   { name: "FAQ", href: "faq" },
@@ -77,75 +78,181 @@ export const FEATURES = [
   },
 ];
 
+
 export const CURRICULUM = [
   {
     id: 1,
-    title: "Tháng 1-2: Nền tảng Java & Spring Core",
-    content:
-      "Làm quen với Java cơ bản, OOP, cấu trúc dữ liệu. Tìm hiểu về Spring Framework, Dependency Injection, Inversion of Control, Annotations và Spring Bean Life Cycle.",
-    image: "https://images.viblo.asia/013a59c2-6f04-4ba0-8b9c-55c079701098.png",
+    title: 'I. Java Core Cơ Bản và Nâng Cao (1 tuần)',
+    content: 'Ôn tập Java cơ bản và nâng cao, bao gồm các nguyên lý lập trình hướng đối tượng, Java Stream API, Lambda Expression và Clean Code.',
+    image: '/assets/images/spring1.jpg',
     details: [
-      "2 buổi học mỗi tuần",
-      "8+ bài tập thực hành",
-      "1 dự án thực tế",
-      "Hỗ trợ 1-1 với giảng viên",
-    ],
+      'Nguyên lý lập trình hướng đối tượng (OOP Principles)',
+      'Các kiểu dữ liệu, toán tử, biến, cấu trúc điều khiển,...',
+      'Quản lý thư viện phụ thuộc với Maven/Gradle',
+      'Java Stream API và Lambda Expression',
+      'Kỹ thuật Clean Code và Refactoring Code',
+    ]
   },
   {
     id: 2,
-    title: "Tháng 3: Spring MVC & Thymeleaf",
-    content:
-      "Xây dựng ứng dụng web với Spring MVC. Làm việc với Thymeleaf template engine. Phát triển RESTful APIs và xử lý form data.",
-    image:
-      "https://st.quantrimang.com/photos/image/2023/08/28/Thymeleaf-spring-boot-7.jpg",
+    title: 'II. Spring Boot Cơ Bản (1 tuần)',
+    content: 'Khởi tạo dự án Spring Boot, tìm hiểu cấu trúc thư mục chuẩn và quản lý dependencies bằng Maven/Gradle.',
+    image: '/assets/images/spring2.jpg',
     details: [
-      "2 buổi học mỗi tuần",
-      "6+ bài tập thực hành",
-      "1 dự án thực tế",
-      "Code review cùng giảng viên",
-    ],
+      'Khởi tạo dự án Spring Boot bằng Spring Initializr',
+      'Tìm hiểu cấu trúc thư mục chuẩn trong dự án Spring Boot',
+      'Quản lý dependencies bằng Maven/Gradle',
+    ]
   },
   {
     id: 3,
-    title: "Tháng 4: Spring Data & Databases",
-    content:
-      "Làm việc với Spring Data JPA, Hibernate ORM. Kết nối với MySQL, PostgreSQL. Transaction management và data validation.",
-    image:
-      "https://miro.medium.com/v2/resize:fit:700/1*VNIM8wOsNoFPvFgK1ENTkQ.png",
+    title: 'III. JPA & Hibernate (3 tuần)',
+    content: 'Làm việc với JPA và Hibernate, quản lý phiên bản cơ sở dữ liệu với Flyway, và tối ưu hóa hiệu suất truy vấn.',
+    image: '/assets/images/spring3.jpg',
     details: [
-      "2 buổi học mỗi tuần",
-      "8+ bài tập thực hành",
-      "1 dự án thực tế",
-      "Hỗ trợ 1-1 với giảng viên",
-    ],
+      'Tổng quan và thao tác cơ bản với JPA và Hibernate',
+      'Sử dụng Flyway để quản lý phiên bản cơ sở dữ liệu',
+      'Hiểu và xử lý vấn đề N+1 Query',
+      'Kỹ thuật tối ưu hóa hiệu suất truy vấn',
+      'Sử dụng Interceptor để can thiệp vào vòng đời Entity',
+      'Quản lý State của Entity trong Hibernate',
+    ]
   },
   {
     id: 4,
-    title: "Tháng 5: Spring Security & Testing",
-    content:
-      "Triển khai bảo mật với Spring Security. Authentication & Authorization. Unit testing và integration testing với JUnit và Mockito.",
-    image: "https://media.techmaster.vn/api/static/bm0tmgk51co4vclgfvu0/c08n1pc51co3o9rj1f80",
+    title: 'IV. Spring Boot Nâng Cao (4 tuần)',
+    content: 'Xây dựng ứng dụng Spring Boot nâng cao với bảo mật, bộ nhớ đệm, tác vụ định kỳ và xây dựng API hoàn chỉnh.',
+    image: '/assets/images/spring4.jpg',
     details: [
-      "2 buổi học mỗi tuần",
-      "7+ bài tập thực hành",
-      "1 dự án thực tế",
-      "Đánh giá code chất lượng",
-    ],
+      'Bảo mật hệ thống với Spring Security và JWT',
+      'Áp dụng bộ nhớ đệm (Memory Cache) để cải thiện hiệu suất',
+      'Cấu hình và thực thi tác vụ định kỳ (Cron Job Schedule)',
+      'Làm việc với các annotation: @RestController, @RequestMapping, @RequestParam, @RequestBody',
+      'Xử lý Request Validation với @Valid và quản lý Exception bằng @ControllerAdvice',
+      'Xây dựng bộ API CRUD hoàn chỉnh cho một Entity mẫu',
+    ]
   },
   {
     id: 5,
-    title: "Tháng 6: Microservices & Deployment",
-    content:
-      "Phát triển microservices với Spring Boot và Spring Cloud. Docker containerization. CI/CD pipeline và deployment lên cloud platforms như AWS.",
-    image: "https://devops.vn/uploads/images/2025/04/6c77a19f-79b4-4f45-a97f-a174eaf767cc.webp",
+    title: 'V. Testing (1 tuần)',
+    content: 'Viết Unit Test và kiểm thử các thành phần trong Spring Boot.',
+    image: '/assets/images/spring5.jpg',
     details: [
-      "2 buổi học mỗi tuần",
-      "5+ bài tập thực hành",
-      "1 dự án tổng hợp",
-      "Hướng dẫn portfolio",
+      'Kiểm thử Service layer bằng JUnit5 và Mockito',
+      'Kiểm thử Controller layer bằng MockMvc',
+    ]
+  },
+  {
+    id: 6,
+    title: 'VI. Project Thực Chiến (2 tuần)',
+    content: 'Làm việc với Git và triển khai dự án thực tế theo tiêu chuẩn doanh nghiệp.',
+    image: '/assets/images/spring6.jpg',
+    details: [
+      'Git cơ bản: thiết lập môi trường, thao tác branch, sử dụng Git CLI và Git Plugin trong IntelliJ IDEA',
+      'Git nâng cao: xử lý xung đột (conflict), merge & rebase, cherry-pick commit',
+      'Phát triển, kiểm thử và hoàn thiện một dự án thực tế theo tiêu chuẩn doanh nghiệp',
+    ]
+  },
+  {
+    id: 7,
+    title: 'VII. Triển khai Ứng dụng (Deploy) (1 tuần)',
+    content: 'Docker hóa ứng dụng Spring Boot.',
+    image: '/assets/images/spring7.jpg',
+    details: [
+      'Viết Dockerfile chuẩn cho ứng dụng',
+      'Build Image và khởi chạy ứng dụng dưới dạng Container',
+    ]
+  },
+  {
+    id: 8,
+    title: 'VIII. Kiến trúc Microservices (1 tuần)',
+    content: 'Tìm hiểu về kiến trúc Microservices và các mô hình giao tiếp.',
+    image: '/assets/images/spring8.jpg',
+    details: [
+      'So sánh kiến trúc Monolithic và Microservices',
+      'Các mô hình giao tiếp giữa Microservices (synchronous vs asynchronous)',
+      'Làm việc với Message Broker (RabbitMQ, Kafka,...)',
+      'Quản lý Distributed Cache',
+    ]
+  },
+  {
+    id: 9,
+    title: 'IX. Chuẩn bị Phỏng vấn (1 tuần)',
+    content: 'Kỹ năng phỏng vấn và chuẩn bị hồ sơ.',
+    image: '/assets/images/spring9.png',
+    details: [
+      'Hỗ trợ sửa CV',
+      'Thực hành Mock Interview với tình huống thực tế',
+    ]
+  }
+];
+
+export const INSTRUCTOR = {
+  name: "Ngô Nhất Toàn",
+  avatar: "/assets/images/instructor.jpg",
+  title: "Senior Backend Developer",
+  company: "MoMo",
+  experience: "4+ năm kinh nghiệm",
+  education: {
+    university: "FPT University",
+    major: "Software Engineering",
+    scholarship: "150M VND - Học bổng cho sinh viên xuất sắc",
+  },
+  technical_skills: [
+    "Knowledge event-driven and Micro-service.",
+    "Perform in Agile and Scrum development framework.",
+    "Outstanding knowledge of OOP methodology, SOLID principles, design pattern.",
+  ],
+  skills: {
+    languages: ["Java (Vert.x, Spring boot)", "NodeJS", "Flutter", "Golang"],
+    tools: [
+      "RabbitMQ",
+      "Kafka",
+      "MQTT",
+      "Kubernetes",
+      "Docker",
+      "Git",
+      "CI/CD",
+    ],
+    databases: [
+      "Oracle",
+      "Cassandra",
+      "OceanBase",
+      "Redis",
+      "MySQL",
+      "SQL Server",
     ],
   },
-];
+  experience_details: [
+    {
+      company: "MoMo (GIFT, PAYMENT, GRAB DEFENSE)",
+      position: "Back-end Developer",
+      period: "6/2022 - Hiện tại",
+      description:
+        "Backend developer tại ví điện tử đầu tiên phục vụ 30 triệu người dùng Việt Nam.",
+      achievements: [
+        "Tạo - xác thực - đề xuất quà tặng, áp dụng quà tặng trong thanh toán",
+        "Refactor và định nghĩa 60 mã lỗi và mô tả lỗi của quà tặng",
+        "Tích hợp dịch vụ payment-core với các team khác",
+        "Xây dựng cầu nối giữa Model AI Grab và MoMo AI để kiểm tra người dùng rủi ro",
+      ],
+    },
+    {
+      company: "LOTTE DATA COMMUNICATION (HIGIENE)",
+      position: "Full-stack Developer",
+      period: "4/2021 - 4/2022",
+      description:
+        "Bảo trì và phát triển các dự án liên quan đến đánh giá vệ sinh của các cửa hàng trong hệ thống Lotte.",
+      achievements: [
+        "Triển khai dự án trên server WAS",
+        "Tích hợp tải lên video với AWS S3",
+        "Xây dựng API cho Prometheus sử dụng Spring Metrics",
+      ],
+    },
+  ],
+  motto:
+    "Xây dựng hệ thống toàn cầu và trở thành nhà lãnh đạo xuất sắc có khả năng đặt mục tiêu rõ ràng, truyền cảm hứng và hướng dẫn đội ngũ phát triển.",
+};
 
 export const TESTIMONIALS = [
   {
@@ -239,8 +346,8 @@ export const FOOTER_LINKS = {
     { name: "Tuyển dụng", href: "#" },
   ],
   contact: {
-    email: "info@springbootacademy.vn",
-    phone: "0912 345 678",
+    email: "ngonhattoan99@gmail.com",
+    phone: "077 258 9922",
   },
   social: [
     { name: "Facebook", href: "#", icon: "facebook" },

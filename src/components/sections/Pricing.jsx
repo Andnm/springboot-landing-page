@@ -3,8 +3,11 @@ import { CheckCircle } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';
 import Button from '../ui/Button';
 import { PRICING } from '../../constants/data';
+import { useNavigate } from 'react-router-dom';
 
 const Pricing = () => {
+  const navigate = useNavigate();
+
   return (
     <AnimatedSection
       id="pricing"
@@ -20,7 +23,7 @@ const Pricing = () => {
             </p>
           </AnimatedSection>
         </div>
-        
+
         <AnimatedSection animation="scale-in" delay={200}>
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
@@ -28,12 +31,12 @@ const Pricing = () => {
                 <h3 className="text-2xl font-bold mb-2">{PRICING.title}</h3>
                 <p className="text-indigo-100">{PRICING.subtitle}</p>
               </div>
-              
+
               <div className="p-8">
                 <div className="flex justify-center mb-8">
                   <span className="text-5xl font-bold">{PRICING.price}</span>
                 </div>
-                
+
                 <div className="space-y-4">
                   {PRICING.features.map((feature, index) => (
                     <div key={index} className="flex items-center">
@@ -42,18 +45,19 @@ const Pricing = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="mt-8">
                   <div className="bg-gray-100 p-4 rounded-lg mb-6">
                     <h4 className="font-bold text-center mb-2">{PRICING.installment.title}</h4>
                     <p className="text-gray-600 text-center">{PRICING.installment.description}</p>
                   </div>
-                  
+
                   <Button
                     variant="primary"
                     size="lg"
                     fullWidth
                     className="flex items-center justify-center"
+                    onClick={() => navigate('/contact')}
                   >
                     Đăng ký ngay
                   </Button>

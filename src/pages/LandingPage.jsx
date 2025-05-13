@@ -6,6 +6,7 @@ import Testimonials from '../components/sections/Testimonials';
 import Pricing from '../components/sections/Pricing';
 import FAQ from '../components/sections/FAQ';
 import ContactForm from '../components/sections/ContactForm';
+import InstructorSection from '../components/sections/InstructorSection';
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <Hero />
       <Features />
       <Curriculum />
+      <InstructorSection />
       <Testimonials />
       <Pricing />
       <FAQ />

@@ -1,73 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { ArrowRight, Mail, X, Check } from 'lucide-react';
+import { ArrowRight, Mail, X, Check, Phone, MapPin, Calendar } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';
 import Button from '../ui/Button';
 import emailjs from '@emailjs/browser';
 
-const CONTACT_EMAIL = 'dangnguyenminhan123@gmail.com';
-
-const EMAIL_SERVICE_ID = 'service_qcqwkib';
-const EMAIL_TEMPLATE_ID = 'template_g04gj9b';
-const EMAIL_PUBLIC_KEY = '1Z4bxWigXU5vA3fzo';
+const CONTACT_EMAIL = 'ngonhattoan99@gmail.com';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [modalStatus, setModalStatus] = useState({ success: true, message: '' });
-
-  const formRef = useRef();
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const templateParams = {
-      email: CONTACT_EMAIL,
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      subject: `Đăng ký tư vấn khóa học Spring Boot - ${formData.name}`,
-      message: `Tôi quan tâm đến khóa học Spring Boot 6 tháng và muốn nhận tư vấn chi tiết.`
-    };
-
-    emailjs.send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, templateParams, EMAIL_PUBLIC_KEY)
-      .then((result) => {
-        setModalStatus({
-          success: true,
-          message: `Cảm ơn ${formData.name}! Chúng tôi đã nhận được yêu cầu tư vấn của bạn và sẽ liên hệ lại trong thời gian sớm nhất.`
-        });
-        setShowModal(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: ''
-        });
-      }, (error) => {
-        setModalStatus({
-          success: false,
-          message: 'Đã xảy ra lỗi khi gửi yêu cầu! Vui lòng thử lại sau hoặc liên hệ trực tiếp với chúng tôi.'
-        });
-        setShowModal(true);
-        console.error('Email error:', error);
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
-  };
-
   return (
     <AnimatedSection
       id="contact"
@@ -75,7 +14,7 @@ const ContactForm = () => {
       animation="fade-in"
     >
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <AnimatedSection animation="fade-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Sẵn sàng để thay đổi sự nghiệp của bạn?</h2>
@@ -84,105 +23,93 @@ const ContactForm = () => {
           </div>
 
           <AnimatedSection animation="fade-up" delay={200}>
-            <div className="bg-white rounded-lg shadow-xl p-8">
-              <form ref={formRef} onSubmit={handleSubmit}>
-                <div className="mb-6">
-                  <label htmlFor="name" className="block text-gray-800 font-bold mb-2">Họ và tên</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent text-gray-800 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 outline-none transition-colors duration-200"
-                    placeholder="Nhập họ và tên của bạn"
-                    required
-                  />
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/2 p-8">
+                  <h3 className="text-gray-800 font-bold text-2xl mb-6">Liên hệ trực tiếp</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-center">
+                      <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                        <Phone className="text-indigo-600" size={24} />
+                      </div>
+                      <div>
+                        <p className="text-gray-500 text-sm">Điện thoại</p>
+                        <a href="tel:0772589922" className="text-gray-800 text-lg font-medium hover:text-indigo-600 transition-colors">
+                          077 258 9922
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center">
+                      <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                        <Mail className="text-indigo-600" size={24} />
+                      </div>
+                      <div>
+                        <p className="text-gray-500 text-sm">Email</p>
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="text-gray-800 text-lg font-medium hover:text-indigo-600 transition-colors">
+                          {CONTACT_EMAIL}
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center">
+                      <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                        <MapPin className="text-indigo-600" size={24} />
+                      </div>
+                      <div>
+                        <p className="text-gray-500 text-sm">Địa chỉ</p>
+                        <p className="text-gray-800 text-lg font-medium">
+                          78 Phạm Đình Hổ, Quận 6, TP.HCM
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* <div className="flex items-center">
+                      <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                        <Calendar className="text-indigo-600" size={24} />
+                      </div>
+                      <div>
+                        <p className="text-gray-500 text-sm">Khai giảng</p>
+                        <p className="text-gray-800 text-lg font-medium">
+                          15/06/2025 - Nhận ưu đãi 15%
+                        </p>
+                      </div>
+                    </div> */}
+                    
+                    <Button 
+                      variant="primary"
+                      size="lg"
+                      icon={<Mail />}
+                      iconPosition="left"
+                      onClick={() => window.location.href = `mailto:${CONTACT_EMAIL}`}
+                      className="mt-4"
+                    >
+                      Gửi email ngay
+                    </Button>
+                  </div>
                 </div>
-
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-gray-800 font-bold mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent text-gray-800 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 outline-none transition-colors duration-200"
-                    placeholder="Nhập địa chỉ email của bạn"
-                    required
-                  />
+                
+                <div className="md:w-1/2 bg-gradient-to-br from-indigo-50 to-blue-50 p-8 flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-gray-800 font-bold text-xl mb-6">Quét mã để kết nối Zalo</h3>
+                    <div className="bg-white p-3 rounded-lg shadow-lg mb-4 inline-block transform hover:scale-105 transition-transform duration-300">
+                      <img
+                        src="/assets/images/zalo-qr.jpg"
+                        alt="Zalo QR Code"
+                        className="w-56 h-56 object-cover"
+                      />
+                    </div>
+                    <p className="text-gray-600 text-sm mt-4">
+                      Quét mã QR bằng ứng dụng Zalo<br />để được tư vấn nhanh chóng
+                    </p>
+                  </div>
                 </div>
-
-                <div className="mb-6">
-                  <label htmlFor="phone" className="block text-gray-800 font-bold mb-2">Số điện thoại</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent text-gray-800 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 outline-none transition-colors duration-200"
-                    placeholder="Nhập số điện thoại của bạn"
-                    pattern="^(0|84)\d{8,9}$"
-                    title="Vui lòng nhập số điện thoại hợp lệ"
-                    required
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="lg"
-                  fullWidth
-                  icon={<ArrowRight />}
-                  iconPosition="right"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Đang gửi...' : 'Đăng ký tư vấn miễn phí'}
-                </Button>
-              </form>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </div>
-
-      {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="absolute inset-0 bg-black opacity-50" onClick={() => setShowModal(false)}></div>
-          <div className="bg-white rounded-lg p-8 max-w-md mx-4 relative z-10">
-            <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-              onClick={() => setShowModal(false)}
-            >
-              <X size={24} />
-            </button>
-
-            <div className="text-center">
-              <div className={`rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 ${modalStatus.success ? 'bg-green-100' : 'bg-red-100'
-                }`}>
-                {modalStatus.success ? (
-                  <Check size={32} className="text-green-600" />
-                ) : (
-                  <X size={32} className="text-red-600" />
-                )}
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                {modalStatus.success ? 'Đã gửi yêu cầu!' : 'Lỗi gửi yêu cầu!'}
-              </h3>
-              <p className="text-gray-600 mb-6">
-                {modalStatus.message}
-              </p>
-              <Button
-                variant="primary"
-                onClick={() => setShowModal(false)}
-              >
-                Đóng
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </AnimatedSection>
   );
 };

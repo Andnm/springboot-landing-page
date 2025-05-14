@@ -39,7 +39,7 @@ const Curriculum = () => {
               <h3 className="text-xl font-bold text-gray-800">Giáo trình chi tiết</h3>
             </div>
             <p className="text-gray-600">
-              Giáo trình được biên soạn bởi các chuyên gia với nhiều năm kinh nghiệm trong ngành, bám sát nhu cầu thực tế của doanh nghiệp. 
+              Giáo trình được biên soạn bởi Senior với nhiều năm kinh nghiệm trong ngành, bám sát nhu cầu thực tế của doanh nghiệp. 
               Mỗi module được thiết kế tỉ mỉ, giúp bạn nắm vững cả lý thuyết lẫn thực hành.
             </p>
           </div>

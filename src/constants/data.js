@@ -312,12 +312,12 @@ export const FAQS = [
     answer:
       "Bạn cần một máy tính với ít nhất 8GB RAM, Java Development Kit (JDK) 11 trở lên, và một IDE như IntelliJ IDEA hoặc Eclipse. Chúng tôi sẽ hướng dẫn bạn cài đặt các công cụ cần thiết trong buổi đầu tiên.",
   },
-  {
-    id: 3,
-    question: "Tôi có nhận được chứng chỉ sau khi hoàn thành khóa học không?",
-    answer:
-      "Có, bạn sẽ nhận được chứng chỉ hoàn thành khóa học sau khi hoàn thành dự án cuối khóa và đạt được ít nhất 70% điểm trong các bài kiểm tra.",
-  },
+  // {
+  //   id: 3,
+  //   question: "Tôi có nhận được chứng chỉ sau khi hoàn thành khóa học không?",
+  //   answer:
+  //     "Có, bạn sẽ nhận được chứng chỉ hoàn thành khóa học sau khi hoàn thành dự án cuối khóa và đạt được ít nhất 70% điểm trong các bài kiểm tra.",
+  // },
   {
     id: 4,
     question: "Có hỗ trợ tìm việc làm sau khi học xong không?",

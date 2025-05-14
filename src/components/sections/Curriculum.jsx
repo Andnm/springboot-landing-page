@@ -46,7 +46,7 @@ const Curriculum = () => {
           
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Tabs */}
-            <div className="w-full lg:w-1/3 overflow-hidden lg:overflow-y-auto lg:max-h-[600px] lg:pr-4 bg-gray-50 p-4 rounded-xl">
+            <div className="w-full lg:w-1/3 overflow-hidden lg:overflow-y-auto lg:max-h-[780px] lg:pr-4 bg-gray-50 p-4 rounded-xl">
               <div className="space-y-3">
                 {CURRICULUM.map((item) => (
                   <CurriculumTab

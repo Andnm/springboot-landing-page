@@ -97,7 +97,7 @@ export const CURRICULUM = [
     id: 2,
     title: 'II. Spring Boot Cơ Bản (1 tuần)',
     content: 'Khởi tạo dự án Spring Boot, tìm hiểu cấu trúc thư mục chuẩn và quản lý dependencies bằng Maven/Gradle.',
-    image: '/assets/images/spring2.jpg',
+    image: '/assets/images/spring2.png',
     details: [
       'Khởi tạo dự án Spring Boot bằng Spring Initializr',
       'Tìm hiểu cấu trúc thư mục chuẩn trong dự án Spring Boot',
@@ -122,7 +122,7 @@ export const CURRICULUM = [
     id: 4,
     title: 'IV. Spring Boot Nâng Cao (4 tuần)',
     content: 'Xây dựng ứng dụng Spring Boot nâng cao với bảo mật, bộ nhớ đệm, tác vụ định kỳ và xây dựng API hoàn chỉnh.',
-    image: '/assets/images/spring4.jpg',
+    image: '/assets/images/spring2.png',
     details: [
       'Bảo mật hệ thống với Spring Security và JWT',
       'Áp dụng bộ nhớ đệm (Memory Cache) để cải thiện hiệu suất',
@@ -136,7 +136,7 @@ export const CURRICULUM = [
     id: 5,
     title: 'V. Testing (1 tuần)',
     content: 'Viết Unit Test và kiểm thử các thành phần trong Spring Boot.',
-    image: '/assets/images/spring5.jpg',
+    image: '/assets/images/spring5.png',
     details: [
       'Kiểm thử Service layer bằng JUnit5 và Mockito',
       'Kiểm thử Controller layer bằng MockMvc',

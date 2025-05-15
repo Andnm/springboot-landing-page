@@ -21,6 +21,39 @@ export const NAV_LINKS = [
   { name: "Liên hệ", href: "contact" },
 ];
 
+export const TECHNOLOGIES = [
+  {
+    id: 1,
+    name: 'Java',
+    icon: '/assets/images/tech/java.png',
+  },
+  {
+    id: 2,
+    name: 'Spring Boot',
+    icon: '/assets/images/tech/spring.png',
+  },
+  {
+    id: 3,
+    name: 'Hibernate',
+    icon: '/assets/images/tech/hibernate.png',
+  },
+  {
+    id: 4,
+    name: 'REST API',
+    icon: '/assets/images/tech/rest-api.png',
+  },
+  {
+    id: 5,
+    name: 'Microservices',
+    icon: '/assets/images/tech/microservices.png',
+  },
+  {
+    id: 6,
+    name: 'Docker',
+    icon: '/assets/images/tech/docker.png',
+  }
+];
+
 export const FEATURES = [
   {
     id: 1,
@@ -77,7 +110,6 @@ export const FEATURES = [
       "Truy cập vĩnh viễn vào tài liệu khóa học và cộng đồng học viên để trao đổi kinh nghiệm và hỗ trợ lẫn nhau.",
   },
 ];
-
 
 export const CURRICULUM = [
   {
@@ -346,7 +378,7 @@ export const FOOTER_LINKS = {
   ],
   contact: {
     email: "ngonhattoan99@gmail.com",
-    phone: "077 258 9922",
+    phone: "094 951 1560",
   },
   social: [
     { name: "Facebook", href: "#", icon: "facebook" },
@@ -367,7 +399,7 @@ export const HERO_INFO_CARDS = [
       color: "text-indigo-800",
     },
     description:
-      "Học từ cơ bản đến nâng cao với giảng viên có hơn 10 năm kinh nghiệm",
+      "Học từ cơ bản đến nâng cao với giảng viên có nhiều năm kinh nghiệm",
     rotation: 3,
     className: "transform-gpu hover:scale-105",
   },
@@ -405,7 +437,7 @@ export const HERO_CTA_CARD = {
   className:
     "bg-gradient-to-r from-purple-500 to-indigo-600 p-6 rounded-lg shadow-xl transform rotate-[-2deg] hover:rotate-0 transition-all duration-300 text-white hover:scale-105 transform-gpu",
   title: "Bắt đầu học ngay!",
-  description: "Khóa học tiếp theo sẽ bắt đầu vào ngày 15/05/2025",
+  description: "",
   slots: 20,
   discount: "15%",
 };

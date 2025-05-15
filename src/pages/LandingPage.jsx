@@ -15,9 +15,9 @@ const LandingPage = () => {
       <Features />
       <Curriculum />
       <InstructorSection />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Pricing />
-      <FAQ />
+      {/* <FAQ /> */}
       <ContactForm />
     </>
   );

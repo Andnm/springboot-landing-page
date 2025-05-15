@@ -15,9 +15,9 @@ export const NAV_LINKS = [
   { name: "Lợi ích", href: "features" },
   { name: "Lộ trình", href: "curriculum" },
   { name: "Giảng viên", href: "#instructor" },
-  { name: "Đánh giá", href: "testimonials" },
+  // { name: "Đánh giá", href: "testimonials" },
   { name: "Học phí", href: "pricing" },
-  { name: "FAQ", href: "faq" },
+  // { name: "FAQ", href: "faq" },
   { name: "Liên hệ", href: "contact" },
 ];
 
@@ -289,7 +289,6 @@ export const PRICING = {
     "Hơn 180 giờ học trực tiếp",
     "5+ dự án thực tế cho portfolio",
     "Code review 1-1 với giảng viên",
-    "Chứng chỉ hoàn thành khóa học",
     "Hỗ trợ tìm việc sau khóa học",
     "Cộng đồng hỗ trợ trọn đời",
   ],

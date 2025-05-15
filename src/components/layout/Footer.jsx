@@ -108,11 +108,11 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* <div className="pt-8 mt-8 border-t border-gray-800 text-center">
+        <div className="pt-8 mt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400">
             &copy; {new Date().getFullYear()} Spring Boot Academy. Tất cả các quyền được bảo lưu.
           </p>
-        </div> */}
+        </div>
       </div>
     </footer>
   );

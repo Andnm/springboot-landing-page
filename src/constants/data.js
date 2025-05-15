@@ -51,6 +51,16 @@ export const TECHNOLOGIES = [
     id: 6,
     name: 'Docker',
     icon: '/assets/images/tech/docker.png',
+  },
+  {
+    id: 7,
+    name: 'MySQL',
+    icon: '/assets/images/tech/mysql.png',
+  },
+  {
+    id: 8,
+    name: 'Git',
+    icon: '/assets/images/tech/git.png',
   }
 ];
 
@@ -98,7 +108,7 @@ export const FEATURES = [
     iconColor: "text-purple-600",
     title: "Kết nối doanh nghiệp",
     description:
-      "Cơ hội được kết nối với các doanh nghiệp đối tác để thực tập hoặc làm việc sau khi hoàn thành khóa học.",
+      "Cơ hội được kết nối với các doanh nghiệp đối tác để đi thực tập hoặc làm việc sau khi hoàn thành khóa học một cách xuất sắc.",
   },
   {
     id: 6,
@@ -107,7 +117,7 @@ export const FEATURES = [
     iconColor: "text-red-600",
     title: "Hỗ trợ trọn đời",
     description:
-      "Truy cập vĩnh viễn vào tài liệu khóa học và cộng đồng học viên để trao đổi kinh nghiệm và hỗ trợ lẫn nhau.",
+      "Truy cập vĩnh viễn vào tài liệu khóa học và cộng đồng học viên để trao đổi kinh nghiệm và hỗ trợ lẫn nhau cả trong lẫn sau khóa học.",
   },
 ];
 
@@ -187,7 +197,7 @@ export const CURRICULUM = [
   },
   {
     id: 7,
-    title: 'VII. Triển khai Ứng dụng (Deploy) (1 tuần)',
+    title: 'VII. Triển khai Ứng dụng (1 tuần)',
     content: 'Docker hóa ứng dụng Spring Boot.',
     image: '/assets/images/spring7.jpg',
     details: [

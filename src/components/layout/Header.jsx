@@ -29,7 +29,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <h1 className={`text-2xl font-bold ${isScrolled ? 'text-primary-600' : 'text-white'}`}>
-            Spring Boot Academy
+            Spring Academy
           </h1>
         </Link>
 

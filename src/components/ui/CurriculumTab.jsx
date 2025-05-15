@@ -1,11 +1,12 @@
-// src/components/ui/CurriculumTab.jsx
 import React from 'react';
-import { CheckCircle, Clock, Calendar, BookOpen, Award } from 'lucide-react';
+import { CheckCircle, Clock, Calendar, BookOpen, Award, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const CurriculumTab = ({ 
   title, 
   isActive, 
-  onClick 
+  onClick,
+  index
 }) => {
   // Trích xuất số module và tên module
   const moduleMatch = title.match(/([IVX]+)\.\s(.+?)\s\(/);
@@ -15,31 +16,96 @@ const CurriculumTab = ({
   // Trích xuất thời gian
   const durationMatch = title.match(/\(([^)]+)\)/);
   const duration = durationMatch ? durationMatch[1] : '';
+
+  // Gradient backgrounds
+  const gradients = [
+    'from-blue-600 to-indigo-700',
+    'from-purple-600 to-indigo-700',
+    'from-emerald-600 to-teal-700',
+    'from-amber-600 to-orange-700',
+    'from-red-600 to-rose-700',
+    'from-cyan-600 to-blue-700',
+    'from-violet-600 to-purple-700',
+    'from-fuchsia-600 to-pink-700',
+    'from-green-600 to-emerald-700',
+  ];
+  
+  const gradient = gradients[index % gradients.length];
   
   return (
-    <div 
-      className={`p-4 mb-4 rounded-lg cursor-pointer transition-all duration-300 ${
-        isActive ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg' : 'bg-white hover:bg-gray-50 border border-gray-200'
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
+      className={`p-4 mb-4 rounded-xl cursor-pointer transition-all duration-300 overflow-hidden relative ${
+        isActive 
+          ? `bg-gradient-to-r ${gradient} text-white shadow-lg transform scale-102` 
+          : 'bg-white hover:bg-gray-50 border border-gray-200 hover:border-gray-300 hover:shadow-md'
       }`}
       onClick={onClick}
+      whileHover={{ 
+        scale: isActive ? 1.02 : 1.01,
+        transition: { duration: 0.2 }
+      }}
+      whileTap={{ scale: 0.98 }}
     >
+      {/* Decorative elements */}
+      {isActive && (
+        <>
+          <div className="absolute top-0 right-0 w-24 h-24 bg-white opacity-5 rounded-full -mt-10 -mr-10"></div>
+          <div className="absolute bottom-0 left-0 w-16 h-16 bg-white opacity-5 rounded-full -mb-8 -ml-8"></div>
+        </>
+      )}
+      
       <div className="flex items-center">
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${
-          isActive ? 'bg-white text-primary-600' : 'bg-primary-50 text-primary-600'
-        }`}>
+        {/* Module number circle */}
+        <motion.div 
+          className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all ${
+            isActive 
+              ? 'bg-white bg-opacity-20 text-white border-2 border-white border-opacity-30' 
+              : `bg-gradient-to-br ${gradient} bg-opacity-10 text-gray-700`
+          }`}
+          animate={isActive ? { scale: [1, 1.1, 1] } : {}}
+          transition={{ duration: 0.5 }}
+        >
           <span className="font-bold text-sm">{moduleNumber}</span>
-        </div>
+        </motion.div>
+        
         <div className="flex-1">
-          <h3 className="font-bold text-sm md:text-base">{moduleName}</h3>
+          <h3 className={`font-bold text-sm md:text-base transition-all ${isActive ? 'text-white' : 'text-gray-800'}`}>
+            {moduleName}
+          </h3>
+          
           {duration && (
-            <div className="flex items-center mt-1">
-              <Clock size={12} className={isActive ? "text-primary-200" : "text-primary-400"} />
-              <span className={`text-xs ml-1 ${isActive ? "text-primary-100" : "text-gray-500"}`}>{duration}</span>
+            <div className="flex items-center mt-1.5">
+              <Clock size={14} className={isActive ? "text-white text-opacity-70" : "text-gray-400"} />
+              <span className={`text-xs ml-1.5 ${isActive ? "text-white text-opacity-80" : "text-gray-500"}`}>
+                {duration}
+              </span>
             </div>
           )}
         </div>
+        
+        {/* Arrow indicator */}
+        <motion.div 
+          animate={{ x: isActive ? 0 : 10, opacity: isActive ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+          className={`w-6 h-6 flex items-center justify-center ${isActive ? 'visible' : 'invisible'}`}
+        >
+          <ArrowRight size={16} className="text-white" />
+        </motion.div>
       </div>
-    </div>
+      
+      {/* Progress indicator - only visible when active */}
+      {isActive && (
+        <motion.div 
+          className="absolute bottom-0 left-0 h-1 bg-white bg-opacity-30"
+          initial={{ width: 0 }}
+          animate={{ width: '100%' }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
+      )}
+    </motion.div>
   );
 };
 
@@ -48,7 +114,8 @@ export const CurriculumContent = ({
   content, 
   image, 
   details,
-  isActive
+  isActive,
+  index
 }) => {
   // Trích xuất module number, name và duration
   const moduleMatch = title.match(/([IVX]+)\.\s(.+?)\s\(/);
@@ -58,85 +125,151 @@ export const CurriculumContent = ({
   const durationMatch = title.match(/\(([^)]+)\)/);
   const duration = durationMatch ? durationMatch[1] : '';
   
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { 
+        duration: 0.5, 
+        delayChildren: 0.1,
+        staggerChildren: 0.1
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.95,
+      transition: { duration: 0.3 }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+  };
+  
+  // Gradient backgrounds
+  const gradients = [
+    'from-blue-600 to-indigo-700',
+    'from-purple-600 to-indigo-700',
+    'from-emerald-600 to-teal-700',
+    'from-amber-600 to-orange-700',
+    'from-red-600 to-rose-700',
+    'from-cyan-600 to-blue-700',
+    'from-violet-600 to-purple-700',
+    'from-fuchsia-600 to-pink-700',
+    'from-green-600 to-emerald-700',
+  ];
+  
+  const gradient = gradients[index % gradients.length];
+  
+  if (!isActive) {
+    return null; // Don't render if not active
+  }
+  
   return (
-    <div 
-      className={`bg-white rounded-xl shadow-xl overflow-hidden transition-all duration-500 ${
-        isActive ? 'opacity-100 transform scale-100' : 'opacity-0 absolute h-0'
-      }`}
+    <motion.div 
+      className="bg-white rounded-xl shadow-xl overflow-hidden"
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={containerVariants}
+      key={title}
+      layoutId={`curriculum-content-${index}`}
     >
       <div className="relative">
         {/* Header with gradient overlay */}
-        <div className="h-48 md:h-64 relative overflow-hidden">
+        <motion.div className="h-52 md:h-72 relative overflow-hidden" variants={itemVariants}>
           <img 
             src={image || "/api/placeholder/800/400"} 
             alt={moduleName} 
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent">
-            <div className="p-6 md:p-8 text-white">
-              <div className="flex items-center mb-2">
-                <span className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-md font-medium mr-2">
+          <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-80`}></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+              <div className="flex flex-wrap items-center mb-3 gap-2">
+                <motion.span 
+                  className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full font-medium border border-white/20"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
                   Module {moduleNumber}
-                </span>
-                <span className="bg-white/20 text-white text-xs px-2 py-1 rounded-full flex items-center">
-                  <Clock size={12} className="mr-1" />
+                </motion.span>
+                <motion.span 
+                  className="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full flex items-center border border-white/20"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Clock size={12} className="mr-1.5" />
                   {duration}
-                </span>
+                </motion.span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold">{moduleName}</h2>
+              <motion.h2 
+                className="text-2xl md:text-3xl font-bold text-white drop-shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
+              >
+                {moduleName}
+              </motion.h2>
             </div>
           </div>
-        </div>
+          
+          {/* Decorative shapes */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mt-16 -mr-16"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -mb-12 -ml-12"></div>
+        </motion.div>
         
         {/* Content section */}
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 md:h-[560px]">
           {/* Overview */}
-          <div className="mb-8">
-            <div className="flex items-center mb-4">
-              <div className="bg-primary-100 p-2 rounded-lg mr-4">
-                <BookOpen className="text-primary-600" size={24} />
+          <motion.div className="mb-8" variants={itemVariants}>
+            <div className="flex items-center mb-5">
+              <div className={`bg-gradient-to-br ${gradient} p-2.5 rounded-lg text-white mr-4 shadow-sm`}>
+                <BookOpen size={22} />
               </div>
               <h3 className="text-xl font-bold text-gray-800">Tổng quan</h3>
             </div>
-            <p className="text-gray-600 leading-relaxed">{content}</p>
-          </div>
+            <p className="text-gray-600 leading-relaxed text-base md:text-lg">{content}</p>
+          </motion.div>
           
           {/* Content details */}
-          <div className="mb-8">
-            <div className="flex items-center mb-4">
-              <div className="bg-green-100 p-2 rounded-lg mr-4">
-                <Award className="text-green-600" size={24} />
+          <motion.div className="mb-8" variants={itemVariants}>
+            <div className="flex items-center mb-5">
+              <div className="bg-green-600 p-2.5 rounded-lg text-white mr-4 shadow-sm">
+                <Award size={22} />
               </div>
               <h3 className="text-xl font-bold text-gray-800">Nội dung bạn sẽ học</h3>
             </div>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 shadow-sm">
               <ul className="space-y-4">
-                {details.map((detail, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="bg-green-500 rounded-full p-1 mr-3 mt-1 flex-shrink-0">
+                {details.map((detail, idx) => (
+                  <motion.li 
+                    key={idx} 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + idx * 0.1 }}
+                  >
+                    <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-full p-1 mr-3 mt-1 flex-shrink-0 shadow-sm">
                       <CheckCircle size={14} className="text-white" />
                     </div>
                     <span className="text-gray-700">{detail}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
           
           {/* Project preview */}
-          {/* <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 border border-primary-100">
-            <div className="flex items-center mb-3">
-              <Calendar className="text-primary-600 mr-2" size={20} />
-              <h3 className="font-bold text-primary-700">Kết quả khi hoàn thành module này</h3>
-            </div>
-            <p className="text-gray-700">
-              Sau khi hoàn thành module này, bạn sẽ nắm vững các khái niệm và có thể áp dụng vào dự án thực tế. 
-              Bạn sẽ được thực hành thông qua các bài tập và mini-project để củng cố kiến thức.
-            </p>
-          </div> */}
+         
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

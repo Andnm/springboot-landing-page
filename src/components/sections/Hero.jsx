@@ -1,11 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight, ChevronDown, Star, Users, Award, Code, Database, Server } from 'lucide-react';
 import Button from '../ui/Button';
 import AnimatedSection from '../ui/AnimatedSection';
 import InfoCard from '../ui/InfoCard';
 import { HERO_INFO_CARDS, HERO_CTA_CARD, TECHNOLOGIES } from '../../constants/data';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
+
+  const [counts, setCounts] = useState({ projects: 0, hours: 0, employment: 0 });
+  const targetCounts = { projects: 5, hours: 180, employment: 85 };
+
+  // Variants for staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 }
+    }
+  };
+
+  const techIconVariants = {
+    initial: { scale: 1 },
+    hover: {
+      scale: 1.15,
+      rotate: 5,
+      transition: { type: "spring", stiffness: 400 }
+    }
+  };
+
+  useEffect(() => {
+    const duration = 2000; // 2 seconds animation
+    const interval = 20; // Update every 20ms
+    const steps = duration / interval;
+
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const progress = step / steps;
+
+      setCounts({
+        projects: Math.ceil(progress * targetCounts.projects),
+        hours: Math.ceil(progress * targetCounts.hours),
+        employment: Math.ceil(progress * targetCounts.employment)
+      });
+
+      if (step >= steps) clearInterval(timer);
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <AnimatedSection
       id="hero"
@@ -44,7 +101,7 @@ const Hero = () => {
 
             <AnimatedSection animation="fade-up" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Trở thành <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-300">Spring Boot Developer</span> chuyên nghiệp trong 6 tháng
+                Trở thành <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-teal-300 to-cyan-500">Spring Boot Developer</span> chuyên nghiệp trong 6 tháng
               </h1>
             </AnimatedSection>
 
@@ -79,22 +136,29 @@ const Hero = () => {
             </AnimatedSection>
 
             {/* Stats */}
-            <AnimatedSection animation="fade-up" delay={700}>
-              <div className="grid grid-cols-3 gap-4 mt-4">
-                <div className="text-center backdrop-blur-sm bg-white/10 rounded-lg px-3 py-4">
-                  <div className="text-3xl font-bold text-yellow-300">5+</div>
-                  <div className="text-xs text-indigo-100 mt-1">Projects thực tế</div>
-                </div>
-                <div className="text-center backdrop-blur-sm bg-white/10 rounded-lg px-3 py-4">
-                  <div className="text-3xl font-bold text-yellow-300">180+</div>
-                  <div className="text-xs text-indigo-100 mt-1">Giờ học thực hành</div>
-                </div>
-                <div className="text-center backdrop-blur-sm bg-white/10 rounded-lg px-3 py-4">
-                  <div className="text-3xl font-bold text-yellow-300">85%</div>
-                  <div className="text-xs text-indigo-100 mt-1">Tỷ lệ có việc làm</div>
-                </div>
-              </div>
-            </AnimatedSection>
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-3 gap-4 mt-4"
+            >
+              {[
+                { value: counts.projects, label: "Projects thực tế", suffix: "+" },
+                { value: counts.hours, label: "Giờ học thực hành", suffix: "+" },
+                { value: counts.employment, label: "Tỷ lệ có việc làm", suffix: "%" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 rounded-lg px-3 py-4 border border-white/10 shadow-xl hover:shadow-indigo-500/20"
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                >
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <div className="text-3xl font-bold bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent">
+                      {stat.value}{stat.suffix}
+                    </div>
+                    <div className="text-xs text-indigo-100 mt-1">{stat.label}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* Scroll hint */}
             <AnimatedSection animation="fade-up" delay={900}>
@@ -178,29 +242,46 @@ const Hero = () => {
         </div>
 
         {/* Technology bar */}
-        <AnimatedSection animation="fade-up" delay={1000}>
-          <div className="mt-16 lg:mt-24 backdrop-blur-sm bg-white/10 rounded-xl p-4 border border-white/10">
-            <div className="text-center mb-4">
-              <p className="text-indigo-200 text-sm font-medium">Công nghệ bạn sẽ được học</p>
-            </div>
-
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {TECHNOLOGIES.map((tech) => (
-                <div key={tech.id} className="flex flex-col items-center">
-                  <div className="w-14 h-14 flex items-center justify-center p-2 bg-white/10 rounded-lg mb-2 transition-all duration-300 hover:bg-white/20 hover:scale-110">
-                    <img
-                      src={tech.icon}
-                      alt={tech.name}
-                      className="w-8 h-8 object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <span className="text-xs text-indigo-100">{tech.name}</span>
-                </div>
-              ))}
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="mt-16 lg:mt-24 backdrop-blur-md bg-gradient-to-r from-white/10 to-indigo-500/10 rounded-xl p-6 border border-white/10 shadow-xl"
+        >
+          <div className="text-center mb-6">
+            <h3 className="text-white text-lg font-medium">Công nghệ bạn sẽ được học</h3>
+            <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-2 rounded-full"></div>
           </div>
-        </AnimatedSection>
+
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {TECHNOLOGIES && TECHNOLOGIES.map((tech) => (
+              <motion.div
+                key={tech.id}
+                className="flex flex-col items-center"
+                variants={itemVariants}
+              >
+                <motion.div
+                  className="w-16 h-16 flex items-center justify-center p-3 bg-gradient-to-br from-white/20 to-white/5 rounded-xl mb-2 border border-white/10 shadow-lg"
+                  variants={techIconVariants}
+                  whileHover="hover"
+                >
+                  <img
+                    src={tech.icon}
+                    alt={tech.name}
+                    className="w-10 h-10 object-contain"
+                    loading="lazy"
+                  />
+                </motion.div>
+                <span className="text-sm text-indigo-100 font-medium">{tech.name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </AnimatedSection>
   );

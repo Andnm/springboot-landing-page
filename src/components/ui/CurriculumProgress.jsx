@@ -92,7 +92,7 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                                     style={{ top: '-5px' }}
                                     initial={{ scale: 0, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
-                                    transition={{ duration: 0.3, delay: weekBlock.moduleIndex * 0.2 }}
+                                    transition={{ duration: 0.3, delay: 0.2 }}
                                     whileHover={{ scale: 1.2 }}
                                     onClick={() => onSelectItem(weekBlock.moduleIndex)}
                                 >
@@ -125,7 +125,7 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
 
                             {/* Week number below timeline */}
                             <motion.div
-                                className="absolute top-[calc(50%+15px)] text-xs font-medium text-gray-500"
+                                className="absolute top-[calc(50%+27px)] text-xs font-medium text-gray-500"
                                 initial={{ opacity: 0, y: -5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.05 + 0.3 }}

@@ -1,4 +1,3 @@
-// src/components/sections/Pricing.jsx
 import React from 'react';
 import { CheckCircle, Star, Clock, Award, PenTool, Users, CreditCard, Gift, Calendar, Zap } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';

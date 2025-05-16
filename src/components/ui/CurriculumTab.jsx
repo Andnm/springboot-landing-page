@@ -8,16 +8,13 @@ const CurriculumTab = ({
   onClick,
   index
 }) => {
-  // Trích xuất số module và tên module
   const moduleMatch = title.match(/([IVX]+)\.\s(.+?)\s\(/);
   const moduleNumber = moduleMatch ? moduleMatch[1] : '';
   const moduleName = moduleMatch ? moduleMatch[2] : title;
   
-  // Trích xuất thời gian
   const durationMatch = title.match(/\(([^)]+)\)/);
   const duration = durationMatch ? durationMatch[1] : '';
 
-  // Gradient backgrounds
   const gradients = [
     'from-blue-600 to-indigo-700',
     'from-purple-600 to-indigo-700',
@@ -117,7 +114,6 @@ export const CurriculumContent = ({
   isActive,
   index
 }) => {
-  // Trích xuất module number, name và duration
   const moduleMatch = title.match(/([IVX]+)\.\s(.+?)\s\(/);
   const moduleNumber = moduleMatch ? moduleMatch[1] : '';
   const moduleName = moduleMatch ? moduleMatch[2] : title;
@@ -125,7 +121,6 @@ export const CurriculumContent = ({
   const durationMatch = title.match(/\(([^)]+)\)/);
   const duration = durationMatch ? durationMatch[1] : '';
   
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { 
@@ -149,7 +144,6 @@ export const CurriculumContent = ({
     visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
   
-  // Gradient backgrounds
   const gradients = [
     'from-blue-600 to-indigo-700',
     'from-purple-600 to-indigo-700',
@@ -165,7 +159,7 @@ export const CurriculumContent = ({
   const gradient = gradients[index % gradients.length];
   
   if (!isActive) {
-    return null; // Don't render if not active
+    return null; 
   }
   
   return (

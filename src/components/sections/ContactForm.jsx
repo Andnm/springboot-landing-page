@@ -6,7 +6,6 @@ import Button from '../ui/Button';
 const CONTACT_EMAIL = 'ngonhattoan99@gmail.com';
 
 const ContactForm = () => {
-  // Animation for QR code
   const [isHovered, setIsHovered] = useState(false);
 
   return (

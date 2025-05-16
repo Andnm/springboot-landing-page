@@ -15,13 +15,11 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
         }
     }, [isInView, items.length]);
 
-    // Calculate total weeks
     const totalWeeks = items.reduce((sum, item) => {
         const durationMatch = item.title.match(/\((\d+)\s+tuần\)/);
         return sum + (durationMatch ? parseInt(durationMatch[1]) : 0);
     }, 0);
 
-    // Generate weeks representation
     const weekBlocks = [];
     let currentWeek = 0;
 
@@ -40,7 +38,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
         }
     });
 
-    // Extract module number and name for tooltips
     const getModuleInfo = (title) => {
         const moduleMatch = title.match(/([IVX]+)\.\s(.+?)\s\(/);
         return {
@@ -49,7 +46,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
         };
     };
 
-    // Gradient backgrounds
     const gradients = [
         'from-blue-600 to-indigo-700',
         'from-purple-600 to-indigo-700',

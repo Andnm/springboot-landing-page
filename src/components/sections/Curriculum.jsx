@@ -9,13 +9,11 @@ const Curriculum = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [isInView, setIsInView] = useState(false);
   
-  // Tính tổng số tuần
   const totalWeeks = CURRICULUM.reduce((sum, item) => {
     const durationMatch = item.title.match(/\((\d+)\s+tuần\)/);
     return sum + (durationMatch ? parseInt(durationMatch[1]) : 0);
   }, 0);
   
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,9 +38,8 @@ const Curriculum = () => {
     }
   };
   
-  // Auto scroll to top of content when changing tabs
   useEffect(() => {
-    if (window.innerWidth < 1024) { // Only scroll on mobile and tablet
+    if (window.innerWidth < 1024) { 
       const contentElement = document.getElementById('curriculum-content');
       if (contentElement) {
         contentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });

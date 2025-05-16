@@ -11,7 +11,6 @@ const Hero = () => {
   const [counts, setCounts] = useState({ projects: 0, hours: 0, employment: 0 });
   const targetCounts = { projects: 5, hours: 180, employment: 85 };
 
-  // Variants for staggered animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,8 +41,8 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const duration = 2000; // 2 seconds animation
-    const interval = 20; // Update every 20ms
+    const duration = 2000; 
+    const interval = 20; 
     const steps = duration / interval;
 
     let step = 0;
@@ -170,10 +169,10 @@ const Hero = () => {
           </div>
 
           {/* Right column - Cards */}
-          <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
+
+          {/* <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
             <AnimatedSection animation="fade-left" delay={800}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Animated Info Cards */}
                 {HERO_INFO_CARDS.map((card, index) => (
                   <div
                     key={card.id}
@@ -197,7 +196,6 @@ const Hero = () => {
                   </div>
                 ))}
 
-                {/* CTA Card */}
                 <div
                   className={`${HERO_CTA_CARD.className} shadow-xl transform transition-all duration-500 hover:scale-105 relative overflow-hidden`}
                   style={{
@@ -207,7 +205,6 @@ const Hero = () => {
                     animationName: 'fadeInUp'
                   }}
                 >
-                  {/* Decorative elements */}
                   <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500 rounded-full filter blur-xl opacity-20"></div>
                   <div className="absolute bottom-0 left-0 w-16 h-16 bg-indigo-500 rounded-full filter blur-xl opacity-20"></div>
 
@@ -238,7 +235,27 @@ const Hero = () => {
                 </div>
               </div>
             </AnimatedSection>
+          </div> */}
+          <div className="w-full lg:w-1/2 mt-12 lg:mt-0 flex justify-center items-center">
+            <AnimatedSection animation="fade-left" delay={800} className="w-full">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="w-full h-auto"
+              >
+                <img
+                  src="/assets/svg/tech_circle.svg"
+                  alt="Spring Boot Technology Circle"
+                  className="w-full h-auto animate-float filter drop-shadow-2xl"
+                  style={{
+                    animation: 'float 6s ease-in-out infinite'
+                  }}
+                />
+              </motion.div>
+            </AnimatedSection>
           </div>
+
         </div>
 
         {/* Technology bar */}

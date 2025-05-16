@@ -24,9 +24,8 @@ const FeatureCard3D = ({
     const cardCenterX = rect.left + rect.width / 2;
     const cardCenterY = rect.top + rect.height / 2;
     
-    // Calculate rotation based on mouse position
-    const rotateY = ((e.clientX - cardCenterX) / (rect.width / 2)) * 5; // Max 5 degrees
-    const rotateX = -((e.clientY - cardCenterY) / (rect.height / 2)) * 5; // Max 5 degrees
+    const rotateY = ((e.clientX - cardCenterX) / (rect.width / 2)) * 5; 
+    const rotateX = -((e.clientY - cardCenterY) / (rect.height / 2)) * 5; 
     
     setRotateX(rotateX);
     setRotateY(rotateY);

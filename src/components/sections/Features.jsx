@@ -5,7 +5,6 @@ import FeatureCard3D from '../ui/FeatureCard';
 import { FEATURES } from '../../constants/data';
 import { Link } from 'react-router-dom';
 
-// Gradient variants for different cards
 const GRADIENTS = [
   'from-blue-500 to-indigo-600',
   'from-emerald-500 to-teal-600',

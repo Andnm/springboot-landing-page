@@ -46,7 +46,6 @@ const CurriculumTab = ({
       }}
       whileTap={{ scale: 0.98 }}
     >
-      {/* Decorative elements */}
       {isActive && (
         <>
           <div className="absolute top-0 right-0 w-24 h-24 bg-white opacity-5 rounded-full -mt-10 -mr-10"></div>
@@ -55,7 +54,6 @@ const CurriculumTab = ({
       )}
       
       <div className="flex items-center">
-        {/* Module number circle */}
         <motion.div 
           className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all ${
             isActive 
@@ -83,7 +81,6 @@ const CurriculumTab = ({
           )}
         </div>
         
-        {/* Arrow indicator */}
         <motion.div 
           animate={{ x: isActive ? 0 : 10, opacity: isActive ? 1 : 0 }}
           transition={{ duration: 0.3 }}
@@ -93,7 +90,6 @@ const CurriculumTab = ({
         </motion.div>
       </div>
       
-      {/* Progress indicator - only visible when active */}
       {isActive && (
         <motion.div 
           className="absolute bottom-0 left-0 h-1 bg-white bg-opacity-30"
@@ -173,7 +169,6 @@ export const CurriculumContent = ({
       layoutId={`curriculum-content-${index}`}
     >
       <div className="relative">
-        {/* Header with gradient overlay */}
         <motion.div className="h-52 md:h-72 relative overflow-hidden" variants={itemVariants}>
           <img 
             src={image || "/api/placeholder/800/400"} 
@@ -213,14 +208,11 @@ export const CurriculumContent = ({
             </div>
           </div>
           
-          {/* Decorative shapes */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mt-16 -mr-16"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -mb-12 -ml-12"></div>
         </motion.div>
         
-        {/* Content section */}
         <div className="p-6 md:p-8 md:h-[560px]">
-          {/* Overview */}
           <motion.div className="mb-8" variants={itemVariants}>
             <div className="flex items-center mb-5">
               <div className={`bg-gradient-to-br ${gradient} p-2.5 rounded-lg text-white mr-4 shadow-sm`}>
@@ -231,7 +223,6 @@ export const CurriculumContent = ({
             <p className="text-gray-600 leading-relaxed text-base md:text-lg">{content}</p>
           </motion.div>
           
-          {/* Content details */}
           <motion.div className="mb-8" variants={itemVariants}>
             <div className="flex items-center mb-5">
               <div className="bg-green-600 p-2.5 rounded-lg text-white mr-4 shadow-sm">
@@ -258,9 +249,7 @@ export const CurriculumContent = ({
               </ul>
             </div>
           </motion.div>
-          
-          {/* Project preview */}
-         
+                   
         </div>
       </div>
     </motion.div>

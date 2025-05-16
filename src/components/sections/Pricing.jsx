@@ -24,7 +24,6 @@ const Pricing = () => {
         <AnimatedSection animation="fade-up" delay={200}>
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-              {/* Header */}
               <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 p-8 text-white relative">
                 <div className="absolute top-0 right-0 mt-4 mr-4">
                   <div className="bg-yellow-400 text-gray-900 font-bold px-4 py-1 rounded-full text-sm transform rotate-2 shadow-lg flex items-center">
@@ -36,11 +35,8 @@ const Pricing = () => {
                 <p className="text-primary-100 text-lg max-w-2xl">{PRICING.subtitle}</p>
               </div>
               
-              {/* Content */}
               <div className="p-8 md:flex">
-                {/* Left - Price & Features */}
                 <div className="md:w-2/3 md:pr-12">
-                  {/* Price - with animation and color */}
                   <div className="flex items-end mb-8">
                     <div className="relative">
                       <div className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
@@ -53,7 +49,6 @@ const Pricing = () => {
                     <span className="text-gray-500 ml-2 mb-3">trọn khóa</span>
                   </div>
                   
-                  {/* Special promo card */}
                   <div className="p-5 bg-indigo-50 rounded-xl border border-indigo-100 mb-8 relative overflow-hidden">
                     <div className="absolute -right-8 -top-8 bg-indigo-100 rounded-full w-24 h-24 opacity-50"></div>
                     <div className="flex items-start relative z-10">
@@ -70,7 +65,6 @@ const Pricing = () => {
                     </div>
                   </div>
                   
-                  {/* What's included */}
                   <div className="mb-8">
                     <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
                       <div className="p-2 bg-green-100 rounded-lg mr-2">
@@ -90,7 +84,6 @@ const Pricing = () => {
                     </div>
                   </div>
                   
-                  {/* Schedule info */}
                   <div className="p-5 bg-gray-50 rounded-xl border border-gray-100 mb-8 hover:shadow-md transition-shadow">
                     <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                       <div className="p-1.5 bg-blue-100 rounded-lg mr-2">
@@ -117,9 +110,7 @@ const Pricing = () => {
                   </div>
                 </div>
                 
-                {/* Right - CTA */}
                 <div className="md:w-1/3 md:border-l border-gray-100 md:pl-12 mt-8 md:mt-0">
-                  {/* Enrollment */}
                   <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-100 mb-8 shadow-sm">
                     <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
                       <div className="p-1.5 bg-indigo-100 rounded-lg mr-2">
@@ -158,7 +149,6 @@ const Pricing = () => {
                     </Button>
                   </div>
                   
-                  {/* Job support */}
                   <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-xl border border-amber-100 shadow-sm">
                     <div className="flex items-center mb-3">
                       <div className="p-2 bg-white rounded-lg shadow-sm mr-3 border border-amber-100">

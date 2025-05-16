@@ -27,13 +27,11 @@ const Features = () => {
   
   return (
     <section id="features" className="py-24 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-100 opacity-60"></div>
       <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gradient-to-br from-blue-50 to-indigo-100 opacity-60"></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-50 to-pink-100 opacity-60"></div>
       
-      {/* Floating shapes */}
       <motion.div 
         className="absolute top-40 right-20 w-12 h-12 rounded-lg bg-gradient-to-br from-purple-300 to-indigo-300 opacity-20"
         animate={{ 
@@ -97,7 +95,6 @@ const Features = () => {
           ))}
         </motion.div>
         
-        {/* Call to action */}
         <motion.div 
           className="mt-16 text-center"
           initial={{ opacity: 0 }}

@@ -60,10 +60,8 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
 
     return (
         <div className="relative">
-            {/* Timeline bar */}
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 transform -translate-y-1/2 rounded-full"></div>
 
-            {/* Progress animation */}
             <motion.div
                 className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-indigo-600 transform -translate-y-1/2 rounded-full"
                 initial={{ width: "0%" }}
@@ -71,7 +69,7 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                 transition={{ duration: 1.5, ease: "easeInOut", delay: items.length * 0.2 }}
             />
 
-            {/* Weeks indicators */}
+
             <div className="flex justify-between relative py-10">
                 {weekBlocks.map((weekBlock, index) => {
                     const moduleInfo = getModuleInfo(items[weekBlock.moduleIndex].title);
@@ -84,7 +82,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                             className="flex flex-col items-center relative group"
                             style={{ width: `${100 / weekBlocks.length}%` }}
                         >
-                            {/* Module milestone */}
                             {weekBlock.isFirst && (
                                 <motion.div
                                     className={`absolute top-1/2 transform -translate-y-10 w-8 h-8 rounded-full ${isActive ? `bg-gradient-to-r ${gradient} shadow-lg` : 'bg-white border-2 border-gray-300'
@@ -102,7 +99,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                                         <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${gradient}`}></div>
                                     )}
 
-                                    {/* Module tooltip */}
                                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-30 mt-[-10px]">
                                         <div className={`bg-gradient-to-r ${gradient} text-white text-xs rounded-lg py-2 px-3 shadow-lg whitespace-nowrap min-w-max`}>
                                             <div className="font-bold mb-1">Module {moduleInfo.number}</div>
@@ -113,7 +109,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                                 </motion.div>
                             )}
 
-                            {/* Week dot */}
                             <motion.div
                                 className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 rounded-full ${weekBlock.moduleIndex === activeIndex ? `bg-gradient-to-r ${gradient}` : 'bg-gray-300'
                                     } z-10`}
@@ -123,7 +118,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                                 transition={{ duration: 0.2, delay: 0.5 }}
                             />
 
-                            {/* Week number below timeline */}
                             <motion.div
                                 className="absolute top-[calc(50%+27px)] text-xs font-medium text-gray-500"
                                 initial={{ opacity: 0, y: -5 }}
@@ -136,7 +130,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                     );
                 })}
 
-                {/* Start and End markers */}
                 <div className="absolute top-1/2 left-0 transform -translate-y-9 -translate-x-4 bg-gray-100 rounded-full px-3 py-1 border border-gray-200 shadow-sm">
                     <div className="flex items-center text-xs font-medium text-gray-600">
                         <Timer size={12} className="mr-1" />
@@ -152,7 +145,6 @@ const CurriculumProgress = ({ items, activeIndex, onSelectItem, isInView }) => {
                 </div>
             </div>
 
-            {/* Week labels */}
             <div className="flex justify-between mb-4">
                 <div className="text-sm font-medium text-gray-500">Tuần 1</div>
                 <div className="text-sm font-medium text-gray-500">Tuần {totalWeeks}</div>

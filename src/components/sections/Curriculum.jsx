@@ -52,11 +52,9 @@ const Curriculum = () => {
       id="curriculum"
       className="py-24 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white"
     >
-      {/* Background decoration */}
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-50 opacity-60"></div>
       <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-indigo-50 opacity-60"></div>
       
-      {/* Floating shapes */}
       <motion.div 
         className="absolute top-1/4 left-10 w-8 h-8 rounded-lg bg-gradient-to-br from-blue-300 to-indigo-300 opacity-20"
         animate={{ 
@@ -102,7 +100,6 @@ const Curriculum = () => {
           </p>
         </motion.div>
         
-        {/* Cards first */}
         <motion.div 
           className="bg-white rounded-2xl shadow-xl p-8 mb-16 border border-gray-100"
           variants={containerVariants}
@@ -111,7 +108,6 @@ const Curriculum = () => {
           viewport={{ once: false, margin: "-100px" }}
         >
           <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8" variants={itemVariants}>
-            {/* Learning Philosophy Card */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 shadow-sm border border-blue-100 relative overflow-hidden group hover:shadow-md transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500 opacity-5 rounded-full -mt-16 -mr-16 group-hover:scale-110 transition-transform duration-500"></div>
               
@@ -126,7 +122,6 @@ const Curriculum = () => {
               </p>
             </div>
             
-            {/* Practical Approach Card */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 shadow-sm border border-green-100 relative overflow-hidden group hover:shadow-md transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-green-500 opacity-5 rounded-full -mt-16 -mr-16 group-hover:scale-110 transition-transform duration-500"></div>
               
@@ -141,7 +136,6 @@ const Curriculum = () => {
               </p>
             </div>
             
-            {/* Career Growth Card */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 shadow-sm border border-purple-100 relative overflow-hidden group hover:shadow-md transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500 opacity-5 rounded-full -mt-16 -mr-16 group-hover:scale-110 transition-transform duration-500"></div>
               
@@ -158,7 +152,6 @@ const Curriculum = () => {
           </motion.div>
         </motion.div>
         
-        {/* Progress timeline MOVED HERE (after cards) */}
         <motion.div 
           className="mb-16 bg-white rounded-xl shadow-md p-6 border border-gray-100"
           initial={{ opacity: 0, y: 20 }}
@@ -181,7 +174,6 @@ const Curriculum = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Tabs */}
             <div id="curriculum-tabs" className="w-full lg:w-1/3 overflow-hidden lg:overflow-y-auto lg:max-h-[850px] lg:pr-4 bg-gray-50 p-6 rounded-xl shadow-md border border-gray-100">
               <div className="space-y-3">
                 {CURRICULUM.map((item, index) => (
@@ -196,7 +188,6 @@ const Curriculum = () => {
               </div>
             </div>
             
-            {/* Content */}
             <div id="curriculum-content" className="w-full lg:w-2/3">
               <AnimatePresence mode="wait">
                 {CURRICULUM.map((item, index) => (
@@ -215,7 +206,6 @@ const Curriculum = () => {
           </div>
         </motion.div>
         
-        {/* Goal statement */}
         <motion.div 
           className="mt-20 text-center"
           initial={{ opacity: 0 }}

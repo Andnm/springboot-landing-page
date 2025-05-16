@@ -68,7 +68,6 @@ const Hero = () => {
       className="relative min-h-screen flex items-center bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-800 text-white overflow-hidden"
       animation="fade-in"
     >
-      {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
           <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" opacity="0.05">
@@ -86,9 +85,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 z-10 py-16">
         <div className="flex flex-col lg:flex-row items-center relative">
-          {/* Left column - Text content */}
           <div className="w-full lg:w-1/2 lg:pr-12">
-            {/* Badge */}
             <AnimatedSection animation="fade-down" delay={100}>
               <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-1 mb-6">
                 <div className="flex items-center">
@@ -134,7 +131,6 @@ const Hero = () => {
               </div>
             </AnimatedSection>
 
-            {/* Stats */}
             <motion.div
               variants={itemVariants}
               className="grid grid-cols-3 gap-4 mt-4"
@@ -159,7 +155,6 @@ const Hero = () => {
               ))}
             </motion.div>
 
-            {/* Scroll hint */}
             <AnimatedSection animation="fade-up" delay={900}>
               <div className="hidden lg:flex items-center mt-12 text-indigo-200 text-sm">
                 <ChevronDown size={20} className="mr-2 animate-bounce" />
@@ -168,74 +163,6 @@ const Hero = () => {
             </AnimatedSection>
           </div>
 
-          {/* Right column - Cards */}
-
-          {/* <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
-            <AnimatedSection animation="fade-left" delay={800}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {HERO_INFO_CARDS.map((card, index) => (
-                  <div
-                    key={card.id}
-                    className="transform transition-all duration-500 hover:scale-105"
-                    style={{
-                      animationDelay: `${index * 200}ms`,
-                      animationDuration: '1s',
-                      animationFillMode: 'both',
-                      animationName: 'fadeInUp'
-                    }}
-                  >
-                    <InfoCard
-                      icon={card.icon}
-                      iconBg={card.iconBg}
-                      iconColor={card.iconColor}
-                      title={card.title}
-                      description={card.description}
-                      rotation={card.rotation}
-                      className={`${card.className} shadow-xl`}
-                    />
-                  </div>
-                ))}
-
-                <div
-                  className={`${HERO_CTA_CARD.className} shadow-xl transform transition-all duration-500 hover:scale-105 relative overflow-hidden`}
-                  style={{
-                    animationDelay: '600ms',
-                    animationDuration: '1s',
-                    animationFillMode: 'both',
-                    animationName: 'fadeInUp'
-                  }}
-                >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500 rounded-full filter blur-xl opacity-20"></div>
-                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-indigo-500 rounded-full filter blur-xl opacity-20"></div>
-
-                  <div className="relative z-10">
-                    <div className="flex items-center mb-3">
-                      <Award size={20} className="text-yellow-300 mr-2" />
-                      <h3 className="font-bold text-xl">{HERO_CTA_CARD.title}</h3>
-                    </div>
-                    <p className="mb-4">{HERO_CTA_CARD.description}</p>
-
-                    <div className="flex justify-between items-center">
-                      <div className="flex flex-col">
-                        <span className="text-sm text-indigo-200">Còn lại</span>
-                        <span className="text-xl font-bold">{HERO_CTA_CARD.slots} slots</span>
-                      </div>
-                      <div className="bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                        -{HERO_CTA_CARD.discount} ưu đãi
-                      </div>
-                    </div>
-
-                    <button
-                      className="w-full mt-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg text-white font-medium transition-all duration-300"
-                      onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                    >
-                      Đăng ký ngay
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div> */}
           <div className="w-full lg:w-1/2 mt-12 lg:mt-0 flex justify-center items-center">
             <AnimatedSection animation="fade-left" delay={800} className="w-full">
               <motion.div
@@ -258,7 +185,6 @@ const Hero = () => {
 
         </div>
 
-        {/* Technology bar */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

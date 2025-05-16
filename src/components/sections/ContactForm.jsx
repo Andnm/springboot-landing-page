@@ -14,7 +14,6 @@ const ContactForm = () => {
       className="py-20 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-800 text-white relative overflow-hidden"
       animation="fade-in"
     >
-      {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full"></div>
         <div className="absolute top-1/2 -right-24 w-64 h-64 bg-white rounded-full"></div>
@@ -38,7 +37,6 @@ const ContactForm = () => {
           <AnimatedSection animation="fade-up" delay={200}>
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-indigo-100">
               <div className="md:flex">
-                {/* Left column - Contact info */}
                 <div className="md:w-1/2 p-8 md:p-10">
                   <div className="flex items-center mb-6">
                     <div className="p-2 bg-indigo-100 rounded-xl mr-3">
@@ -124,9 +122,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                {/* Right column - QR code */}
                 <div className="md:w-1/2 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 p-8 md:p-10 relative overflow-hidden">
-                  {/* Decorative elements */}
                   <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full opacity-30"></div>
                   <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-100 rounded-full opacity-30"></div>
 
@@ -171,7 +167,6 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              {/* Footer */}
               <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 text-center">
                 <p className="flex items-center justify-center">
                   <Award size={16} className="mr-2" />

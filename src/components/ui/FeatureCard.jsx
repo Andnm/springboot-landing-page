@@ -58,7 +58,6 @@ const FeatureCard3D = ({
           transition: isHovered ? "none" : "transform 0.5s ease-out"
         }}
       >
-        {/* Glass shine effect */}
         <motion.div 
           className="absolute inset-0 bg-gradient-to-tr from-white to-transparent opacity-0"
           animate={{ 
@@ -69,15 +68,12 @@ const FeatureCard3D = ({
           transition={{ duration: 0.8 }}
         />
         
-        {/* Decorative corner accent */}
         <div className="absolute top-0 right-0 w-20 h-20 opacity-10">
           <div className={`w-40 h-40 rounded-full bg-gradient-to-br ${gradient} -mt-20 -mr-20`}></div>
         </div>
         
-        {/* Decorative bottom pattern */}
         <div className={`absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r ${gradient}`}></div>
         
-        {/* Icon container with gradient */}
         <motion.div 
           className="relative rounded-2xl w-16 h-16 flex items-center justify-center mb-6"
           animate={{ y: isHovered ? -5 : 0 }}
@@ -89,7 +85,6 @@ const FeatureCard3D = ({
             <Icon size={28} className="text-white" />
           </div>
           
-          {/* Light reflection */}
           <motion.div 
             className="absolute inset-0 rounded-2xl bg-white opacity-0"
             animate={{ 
@@ -99,7 +94,6 @@ const FeatureCard3D = ({
           />
         </motion.div>
         
-        {/* Content */}
         <motion.h3 
           className={`text-xl font-bold mb-4 bg-gradient-to-r bg-clip-text text-transparent ${gradient}`}
           animate={{ x: isHovered ? 5 : 0 }}
@@ -116,7 +110,6 @@ const FeatureCard3D = ({
           {description}
         </motion.p>
         
-        {/* Floating particles */}
         {isHovered && (
           <>
             <motion.div 

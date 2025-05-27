@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { ArrowRight, BookOpen, Clock, Star, Users, BarChart3, Calendar, Sparkles, Code, Database, Shield } from 'lucide-react';
 import { COURSES } from '../../constants/data';
+import { useNavigate } from 'react-router-dom';
 
 const FloatingParticles = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -80,6 +81,8 @@ const GlowingCard = ({ isActive, gradient, children, onClick }) => (
 );
 
 const Courses = () => {
+  const navigate = useNavigate();
+
   const [activeCategory, setActiveCategory] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   
@@ -293,7 +296,7 @@ const Courses = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                   >
-                    <span className="relative z-10 flex items-center gap-2">
+                    <span className="relative z-10 flex items-center gap-2" onClick={() => navigate('/contact')}>
                       Đăng ký ngay
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>

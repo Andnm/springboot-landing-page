@@ -13,10 +13,11 @@ import {
 export const NAV_LINKS = [
   { name: "Trang chủ", href: "hero" },
   { name: "Lợi ích", href: "features" },
+  { name: "Khoá học", href: "courses" },
   { name: "Lộ trình", href: "curriculum" },
-  { name: "Giảng viên", href: "#instructor" },
+  { name: "Giảng viên", href: "instructor" },
   // { name: "Đánh giá", href: "testimonials" },
-  { name: "Học phí", href: "pricing" },
+  // { name: "Học phí", href: "pricing" },
   // { name: "FAQ", href: "faq" },
   { name: "Liên hệ", href: "contact" },
 ];
@@ -370,6 +371,122 @@ export const FAQS = [
     question: "Tôi có thể học online không hay bắt buộc phải đến lớp?",
     answer:
       "Khóa học được thiết kế cho cả hai hình thức học tập. Bạn có thể tham gia trực tiếp tại lớp hoặc tham gia online thông qua nền tảng học trực tuyến của chúng tôi.",
+  },
+];
+
+export const COURSES = [
+  {
+    id: 1,
+    title: 'Spring Boot Master Course',
+    description: 'Khóa học chuyên sâu về Spring Boot, giúp bạn làm chủ framework phổ biến nhất của Java',
+    duration: '20 buổi',
+    level: 'Advanced',
+    students: 299,
+    rating: 4.8,
+    gradient: 'from-emerald-400 via-cyan-400 to-blue-500',
+    skills: [
+      'Spring Boot',
+      'Spring Security',
+      'RESTful APIs',
+      'JPA & Hibernate',
+      'Maven',
+      'Microservices',
+      'Swagger',
+      'Testing',
+      'Deployment',
+      'Docker',
+      'Kubernetes',
+      'CI/CD'
+    ]
+  },
+  {
+    id: 2,
+    title: 'PRO - Java Fundamentals',
+    description: 'Nắm vững nền tảng Java từ cơ bản đến nâng cao, OOP và các design patterns',
+    duration: '15 buổi',
+    level: 'Beginner',
+    students: 245,
+    rating: 4.7,
+    gradient: 'from-blue-500 via-purple-500 to-pink-500',
+    skills: [
+      'Java Core',
+      'OOP Concepts',
+      'Collections Framework',
+      'Exception Handling',
+      'Design Patterns',
+      'Multithreading',
+      'JDBC',
+      'Unit Testing',
+      'Logging',
+      'Lambda Expressions',
+      'Streams API',
+      'Generics'
+    ]
+  },
+  {
+    id: 3,
+    title: 'C Programming',
+    description: 'Học lập trình C từ cơ bản, xây dựng nền tảng vững chắc cho lập trình viên',
+    duration: '12 buổi',
+    level: 'Beginner',
+    students: 178,
+    rating: 4.6,
+    gradient: 'from-purple-500 via-violet-500 to-indigo-600',
+    skills: [
+      'C Syntax',
+      'Pointers',
+      'Memory Management',
+      'Struct & Union',
+      'File I/O',
+      'Dynamic Allocation',
+      'Recursion',
+      'Bit Manipulation',
+      'Data Structures',
+      'Algorithms',
+      'System Programming',
+      'Debugging'
+    ]
+  },
+  {
+    id: 4,
+    title: 'DBI - Database',
+    description: 'Làm chủ cơ sở dữ liệu với SQL, thiết kế schema, tối ưu hiệu suất và thực hành với các case study thực tế từ doanh nghiệp',
+    duration: '10 buổi',
+    level: 'Beginner',
+    students: 156,
+    rating: 4.7,
+    gradient: 'from-orange-400 via-red-500 to-pink-500',
+    skills: [
+      'MySQL',
+      'PostgreSQL',
+      'SQL Fundamentals',
+      'Database Design',
+      'Normalization',
+      'Stored Procedures',
+      'Indexing',
+      'Query Optimization',
+      'Transactions',
+      'Backup & Recovery',
+      'NoSQL Basics',
+      'Data Modeling'
+    ]
+  }
+];
+
+export const STUDENT_REVIEWS = [
+  {
+    name: "Hoàng Minh Quân",
+    role: "Senior Backend Developer at Tan Cang",
+    content:
+      "Điều làm tôi ấn tượng nhất là cách khóa học giúp tôi nhìn nhận bài toán từ nhiều góc độ khác nhau. Trước đây, tôi thường áp dụng một mẫu thiết kế quen thuộc cho mọi dự án, nhưng giờ đây tôi đã biết cân nhắc - kỹ thuật...",
+    avatar: "👨‍💼",
+  },
+  {
+    name: "Nguyễn Minh Tuấn",
+    role: "Senior Backend Developer",
+    content:
+      "Mình đã tìm hiểu về System Design khá nhiều chưa có cơ hội học bài bản với mình hệ thống họ kiến thức và hiểu được sâu về hệ thống có khả năng mở rộng...",
+    avatar: "👨‍💻",
   },
 ];
 

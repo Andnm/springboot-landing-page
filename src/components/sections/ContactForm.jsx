@@ -27,7 +27,7 @@ const ContactForm = () => {
               <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
                 Còn chờ gì nữa?
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">Bắt đầu hành trình <br className="hidden md:block" /><span className="text-yellow-300">Spring Boot Developer</span> ngay!</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">Bắt đầu hành trình <br className="hidden md:block" /><span className="text-yellow-300">Fullstack Developer</span> ngay!</h2>
               <p className="text-xl opacity-90 max-w-2xl mx-auto">
                 Đăng ký ngay hôm nay để nhận tư vấn miễn phí và ưu đãi đặc biệt dành riêng cho bạn
               </p>

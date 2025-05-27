@@ -97,13 +97,13 @@ const Hero = () => {
 
             <AnimatedSection animation="fade-up" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Trở thành <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-teal-300 to-cyan-500">Spring Boot Developer</span> chuyên nghiệp trong 6 tháng
+                Trở thành <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-teal-300 to-cyan-500">Fullstack Developer</span> chuyên nghiệp trong 6 tháng
               </h1>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-up" delay={400}>
               <p className="text-xl mb-8 text-indigo-100">
-                Khóa học Spring Boot toàn diện với những kiến thức thực tế và project thực chiến giúp bạn sẵn sàng cho công việc Java Backend Developer lương cao.
+                Khóa học Fullstack toàn diện với những kiến thức thực tế và project thực chiến giúp bạn sẵn sàng cho công việc Fullstack Developer lương cao.
               </p>
             </AnimatedSection>
 

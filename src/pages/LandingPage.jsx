@@ -7,16 +7,18 @@ import Pricing from '../components/sections/Pricing';
 import FAQ from '../components/sections/FAQ';
 import ContactForm from '../components/sections/ContactForm';
 import InstructorSection from '../components/sections/InstructorSection';
+import Courses from '../components/sections/Courses';
 
 const LandingPage = () => {
   return (
     <>
       <Hero />
       <Features />
+      <Courses />
       <Curriculum />
       <InstructorSection />
       {/* <Testimonials /> */}
-      <Pricing />
+      {/* <Pricing /> */}
       {/* <FAQ /> */}
       <ContactForm />
     </>

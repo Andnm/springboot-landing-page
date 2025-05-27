@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
             <h3 className="text-2xl font-bold mb-4">Spring Academy</h3>
-            <p className="text-gray-400 max-w-sm">Đào tạo lập trình viên Java Spring Boot chuyên nghiệp từ cơ bản đến nâng cao.</p>
+            <p className="text-gray-400 max-w-sm">Đào tạo lập trình viên Fullstack chuyên nghiệp từ cơ bản đến nâng cao.</p>
             <div className="flex space-x-4 mt-6">
               {FOOTER_LINKS.social.map((social, index) => (
                 <a 

@@ -128,7 +128,7 @@ const Courses = () => {
           </motion.div>
           
           <motion.h1
-            className="text-6xl font-bold mb-8 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent"
+            className="text-6xl font-bold pb-5 pt-5 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

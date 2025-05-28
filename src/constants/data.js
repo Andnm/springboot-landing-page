@@ -381,7 +381,7 @@ export const COURSES = [
     description: 'Khóa học chuyên sâu về Spring Boot, giúp bạn làm chủ framework phổ biến nhất của Java',
     duration: '20 buổi',
     level: 'Advanced',
-    students: 299,
+    students: 15,
     rating: 4.8,
     gradient: 'from-emerald-400 via-cyan-400 to-blue-500',
     skills: [
@@ -405,7 +405,7 @@ export const COURSES = [
     description: 'Nắm vững nền tảng Java từ cơ bản đến nâng cao, OOP và các design patterns',
     duration: '15 buổi',
     level: 'Beginner',
-    students: 245,
+    students: 85,
     rating: 4.7,
     gradient: 'from-blue-500 via-purple-500 to-pink-500',
     skills: [
@@ -429,7 +429,7 @@ export const COURSES = [
     description: 'Học lập trình C từ cơ bản, xây dựng nền tảng vững chắc cho lập trình viên',
     duration: '12 buổi',
     level: 'Beginner',
-    students: 178,
+    students: 102,
     rating: 4.6,
     gradient: 'from-purple-500 via-violet-500 to-indigo-600',
     skills: [
@@ -453,7 +453,7 @@ export const COURSES = [
     description: 'Làm chủ cơ sở dữ liệu với SQL, thiết kế schema, tối ưu hiệu suất và thực hành với các case study thực tế từ doanh nghiệp',
     duration: '10 buổi',
     level: 'Beginner',
-    students: 156,
+    students: 56,
     rating: 4.7,
     gradient: 'from-orange-400 via-red-500 to-pink-500',
     skills: [

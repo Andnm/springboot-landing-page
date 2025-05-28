@@ -3,7 +3,7 @@ import { ArrowRight, Mail, Phone, MapPin, MessageCircle, ExternalLink, Clock, Aw
 import AnimatedSection from '../ui/AnimatedSection';
 import Button from '../ui/Button';
 
-const CONTACT_EMAIL = 'ngonhattoan99@gmail.com';
+const CONTACT_EMAIL = 'nhatminh99@gmail.com';
 
 const ContactForm = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -79,9 +79,9 @@ const ContactForm = () => {
                       <div>
                         <p className="text-gray-500 text-sm">Địa chỉ</p>
                         <p className="text-gray-800 text-lg font-medium">
-                          78 Phạm Đình Hổ, Quận 6, TP.HCM
+                          Tòa BS.08 sảnh B Vinhome GrandPark
                         </p>
-                        <a href="https://maps.google.com/?q=78+Phạm+Đình+Hổ+Quận+6+TP+HCM" target="_blank" rel="noopener noreferrer" className="text-indigo-600 text-xs flex items-center mt-1 hover:text-indigo-800">
+                        <a href="https://maps.app.goo.gl/R43PqNGS6decrbKy7?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 text-xs flex items-center mt-1 hover:text-indigo-800">
                           Xem trên Google Maps <ExternalLink size={12} className="ml-1" />
                         </a>
                       </div>
